@@ -34,6 +34,7 @@ How I created :
        ``` "node .    or node index.js     "  to run the file(node .  can be used only when main:index.js otherwise set it)```
 
 ## My project Directory Structure 📄📑
+````
 Satwi's Bot/
 ├── node_modules
 ├── config.json
@@ -44,4 +45,4 @@ Satwi's Bot/
 ├── package-lock.json
 └── package.json
 
-
+```
