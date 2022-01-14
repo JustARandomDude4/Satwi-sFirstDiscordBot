@@ -5,6 +5,6 @@ module.exports = {
 		.setName('wishafreen')
 		.setDescription('Wish Happy birthday to Afreen'),
 	async execute(interaction) {
-		return interaction.reply('💗💗Happy Birthday Afreen💗💗\n We all know how sweet and cute u r.\n All we can wish u is a happy, content and fun life\n 🎈🎇🧨✨🎉🎊🎁🎁🎈\n');
+		return interaction.reply('💥💥Happieee Birthday Afreen💥💥\n We lubbbb u tonssssssssss.\n All we can wish u is a happy, content and fun life\n 🎈🎇🧨✨🎉🎊🎁🎁🎈\n');
 	},
 };

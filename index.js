@@ -1,31 +1,9 @@
-console.log("Beep Beep 👀👀");
-
 const fs = require('fs');
-const { Client, Collection, Intents, MessageActionRow, MessageButton,MessageEmbed } = require('discord.js');
+const { Client, Collection, Intents } = require('discord.js');
 const { token } = require('./config.json');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
 
-	if (interaction.commandName === 'ping') {
-		const row = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('primary')
-					.setLabel('Primary')
-					.setStyle('PRIMARY'),
-			);
-
-		await interaction.reply({ content: 'Pong!', components: [row] });
-	}
-});
-client.on('interactionCreate', interaction => {
-	if (!interaction.isButton()) return;
-	console.log(interaction);
-});
-
-// Command handling code 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -34,22 +12,26 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
-// Event Handling code 
-const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
+client.once('ready', () => {
+	console.log('Ready!');
+});
 
-for (const file of eventFiles) {
-	const event = require(`./events/${file}`);
-	if (event.once) {
-		client.once(event.name, (...args) => event.execute(...args));
-	} else {
-		client.on(event.name, (...args) => event.execute(...args));
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	const command = client.commands.get(interaction.commandName);
+
+	if (!command) return;
+
+	try {
+		await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 	}
-}
-// Buttons
+});
 
-
-client.login(token);
-/*
+client.login(token);/*
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
 
