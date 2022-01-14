@@ -3,11 +3,9 @@
 Made with ❤ for my dear friend 💗**Afreen**💗
 
 ## Features 📋   \\to be added soon
-⚡️ \
-⚡️ \
-⚡️ \
-⚡️ \
-
+⚡️ \Command Handing
+⚡️ \Event Handling
+⚡️ \send, receive, and respond to buttons
 
 ## Steps I followed to create my own bot🔌⚙🛠
 
