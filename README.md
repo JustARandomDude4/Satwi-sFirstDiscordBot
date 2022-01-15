@@ -25,14 +25,14 @@ How I created :
 5. register a slash command against the discord Api   (Slash Commands are kotta way to build and interact with bots on Discord. With Slash Commands,  / type cheste u canchoose the command
 
     npm commands for slash:
-    ```
-                          npm install @discordjs/builders @discordjs/rest discord-api-types ```
+    
+                          npm install @discordjs/builders @discordjs/rest discord-api-types 
 // To solve the Missed access error(I faced that problem thats why), got to discord bot, go to OAuth2 >>  In-app-Authourisation >> applications.commands check the box.
 6. Run the bot!
        ``` "node .    or node index.js     "  to run the file(node .  can be used only when main:index.js otherwise set it)```
 
 ## My project Directory Structure 📄📑
-````
+
 Satwi's Bot/
 ├── node_modules
 ├── config.json
@@ -43,4 +43,17 @@ Satwi's Bot/
 ├── package-lock.json
 └── package.json
 
-```
+
+## Snippets of How Bot works:
+
+<p align="center">
+  <img src="https://github.com/JustARandomDude4/Satwi-sFirstDiscordBot/blob/main/DiscordBot1.PNG" width="1000" title="Final Results">
+</p>
+
+<p align="center">
+  <img src="https://github.com/JustARandomDude4/Satwi-sFirstDiscordBot/blob/main/DiscordBot2.PNG" width="1000" title="Final Results">
+</p>
+
+<p align="center">
+  <img src="https://github.com/JustARandomDude4/Satwi-sFirstDiscordBot/blob/main/DiscordBot3.PNG" width="1000" title="Final Results">
+</p>
